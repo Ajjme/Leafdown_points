@@ -3,7 +3,7 @@
 avg_temp_per_displ_marker <- function(df_ccc_scores, curr_sel_data) {
   df_ccc_scores %>%
     semi_join(curr_sel_data, by = c("State" = "NAME_1", "County" = "NAME_2")) %>%
-    group_by(station, latitude, longitude) %>%
+    group_by(city, latitude, longitude) %>%
     summarise(ev_per_new_vehicle_scaled = mean(ev_per_new_vehicle_scaled, na.rm = TRUE))
 }
 

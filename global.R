@@ -30,9 +30,9 @@ spdfs_list <- list(usa1, usa2, usa2)
 ### combining stations data with mine Seems to be the only way I can get it to work
 df_stations_monthly <- get_data()  %>%
   distinct(County, .keep_all = TRUE) %>%
-  select(-State)
+  select(-State, -latitude, -longitude)
 # Joining Information on Contra costa county cities -----
-df_ccc_scores_only <- readRDS("helper/all_scores.RDS") %>%
+df_ccc_scores_only <- readRDS("helper/all_scores_geo.RDS") %>%
   mutate(County = "Contra Costa",
          State = "California",
          ev_per_new_vehicle_scaled = as.numeric(ev_per_new_vehicle_scaled),
