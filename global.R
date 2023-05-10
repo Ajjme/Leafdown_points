@@ -21,6 +21,8 @@ usa1 <- readRDS("shapes/usa1.RDS")
 usa2 <- readRDS("shapes/usa2.RDS") #(counties)shapes/usa2.RDS
 ### does not work
 spdfs_list <- list(usa1, usa2, ca_cities)
+#for joining need to tell it NAME_2 = COUNTY
+
 
 ### works with below mapping
 #spdfs_list <- list(usa1, usa2, usa2)
